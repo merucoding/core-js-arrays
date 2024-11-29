@@ -22,7 +22,7 @@
  */
 function getIntervalArray(start, end) {
   // return new Array(end - start + 1).fill(0).map((num, i) => i + start);
-  return Array.from({ length: end - start + 1 }, (num, i) => i + start);
+  return Array.from({ length: end - start + 1 }, (_, i) => i + start);
 }
 
 /**
@@ -38,8 +38,10 @@ function getIntervalArray(start, end) {
  *    sumArrays([10, 20, 30], [5, 10, 15]) => [15, 30, 45]
  *    sumArrays([-1, 0, 1], [1, 2, 3, 4]) => [0, 2, 4, 4]
  */
-function sumArrays(/* arr1, arr2 */) {
-  throw new Error('Not implemented');
+function sumArrays(arr1, arr2) {
+  return new Array(Math.max(arr1.length, arr2.length))
+    .fill(0)
+    .map((_, i) => (arr1[i] || 0) + (arr2[i] || 0));
 }
 
 /**
