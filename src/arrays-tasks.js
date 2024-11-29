@@ -14,14 +14,15 @@
  * @param {number} end - The last number of an array.
  * @return {array} - An array of integers.
  *
- * @example
+ * @example                    //  0  1  2  3  4
  *    getIntervalArray(1, 5)  => [ 1, 2, 3, 4, 5 ]
  *    getIntervalArray(-2, 2)  => [ -2, -1, 0, 1, 2 ]
  *    getIntervalArray(0, 100) => [ 0, 1, 2, ..., 100 ]
  *    getIntervalArray(3, 3) => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(start, end) {
+  // return new Array(end - start + 1).fill(0).map((num, i) => i + start);
+  return Array.from({ length: end - start + 1 }, (num, i) => i + start);
 }
 
 /**
